@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JavaScript</title>
+</head>
+<style>
+    .hello{
+        color: red;
+    }
+    .green{
+        color: green;
+    }
+</style>
+<body>
+
+    <div id="main">
+    </div>
+    <h1 id="html" class="hello">In HTML</h1>
+ 
+    <script>
+
+        var heading = document.createElement("h1")
+        var headingtext = document.createTextNode("Created using JavaScript")
+        heading.appendChild(headingtext)
+    
+        var mainDiv = document.getElementById("main")
+        mainDiv.appendChild(heading)
+        var h1 = document.getElementById("html")
+        h1.setAttribute("class","green")
+
+        // document.getElementById('html').remove()
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // document.write("<h1 style =\"color: red;\">Welcome to JavaScript</h1>");
+// window.alert("An alert message");
+// var a, b;
+// a = window.prompt("Enter first number");
+// b = window.prompt("Enter second number");
+// sum=parseInt(a)+parseInt(b)
+// console.log(parseInt(a)+parseInt(b));
+// document.write("<h3>Hello"+" "+sum+"</h3>");
+
+// function square(num){
+//     square=num*num;
+//     document.write('<h1>The num is '+num+' and square is this '+square+'</h1>');
+//     return;
+// }
+
+// square(34);
+// document.write("<p>After Function call</p>") -->
+
+    <!-- <h1>Welcome to JavaScript</h1>
+    <h1 id="heading"></h1> -->

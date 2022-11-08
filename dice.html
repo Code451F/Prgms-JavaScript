@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll a Dice</title>
+    <script>
+        var WON = 0;
+        var LOST = 0;
+        var CONTINUE_ROLLING = 12;
+
+        var firstRoll = true;
+        var sumOfDice = 0;
+        var myPoint = 0;
+        var gameStatus = CONTINUE_ROLLING;
+
+        function play(){
+            var Point = document.getElementById("pointerfield");
+
+            var statusDiv = document.getElementById("status");
+            if(firstRoll){
+                sumOfDice = rollDice();
+
+                switch(sumofDice){
+                    case 7: case 11:
+                        gameStatus = WON;
+
+                        point.value = "";
+                        break;
+                    case 2: case 3: case 12:
+                        gameStatus = LOST;
+
+                        point.value = "";
+                        break;
+                    default:
+                        gameStatus = CONTINUE_ROLLING;
+                        myPoint=sumOfDice;
+                        point.value = myPoint;
+                        firstRoll = false;
+                        statusDiv.innerText = "Roll Again";
+                }
+            }
+            else{
+                sumOfDice = rollDice();
+
+                if(sumOfDice == myPoint)
+                    gameStatus = WON;
+                else
+                    gameStatus = LOST;
+            }
+
+            if(gameStatus == CONTINUE_ROLLING)
+                statusDiv.innerHTML = "Roll Again";
+            else{
+                if(gameStatus == WON)
+                    statusDiv.innerHTML = "Player Wins. Roll Again"
+                else
+                    statusDiv.innerHTML = "Player Loses. Roll Again"
+            }
+        }
+
+                function rollDice(){
+                    var die1;
+                    var die2;
+                    var workSum;
+                    die1 = Math.floor(1+Math.random()*6);
+                    die2 = Math.floor(1+Math.random()*6);
+                    workSum = die1 + die2;
+
+                    document.getElementById("die1field").value = die1;
+                    document.getElementById("die2field").value = die2;
+                    document.getElementById("sumfield").value = workSum;
+
+                    return workSum;
+
+                }
+    </script>
+
+</head>
+<body>
+<form>
+    <table>
+        <caption>Craps</caption>
+        <tr>
+
+        </tr>
+    </table>
+</form>
+    
+
+
+
+    
+</body>
+</html>
